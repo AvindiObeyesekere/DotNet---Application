@@ -35,7 +35,11 @@ namespace MyApp.Controllers
             return View(item);
         }
 
-
+        public async Task<IActionResult> Edit(int id)
+        {
+            var item = await _context.Items.FirstOrDefaultAsync(x=> x.Id == id);
+            return View(item);
+        }
     }
 }
 
